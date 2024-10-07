@@ -41,7 +41,11 @@ class Project(
     @JoinColumn(name = "project_id") // 맵핑 기준
     var details: MutableList<ProjectDetail> = mutableListOf()
 
-    @OneToMany(mappedBy = "project") // 양방향 연관관계에서 연관관계 주인 지정
+    @OneToMany(
+        mappedBy = "project",
+        fetch = FetchType.LAZY,
+        cascade = [CascadeType.ALL]
+    ) // 양방향 연관관계에서 연관관계 주인 지정
     var skills: MutableList<ProjectSkill> = mutableListOf()
 
     fun getEndYearMonth(): String {
