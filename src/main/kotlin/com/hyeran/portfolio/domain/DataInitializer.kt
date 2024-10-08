@@ -14,14 +14,14 @@ import java.time.LocalDate
 class DataInitializer(
     private val achievementRepository: AchievementRepository,
     private val introductionRepository: IntroductionRepository,
-    private val linkRepository:LinkRepository,
+    private val linkRepository: LinkRepository,
     private val skillRepository: SkillRepository,
     private val projectRepository: ProjectRepository,
     private val experienceRepository: ExperienceRepository
 ) {
     @PostConstruct
     // 스프링 DI 실행 시 component scan 해서 빈 등록 -> postconstruct 찾기
-    fun initalizer(){
+    fun initalizer() {
 
         println("스프링이 실행되었습니다. 테스트 데이터를 초기화합니다.")
 
@@ -88,12 +88,12 @@ class DataInitializer(
             )
         )
         // experienceRepo-에서 cascade = type.all -> 영속성 컨텍스트
-        experienceRepository.saveAll(mutableListOf(experience1,experience2))
+        experienceRepository.saveAll(mutableListOf(experience1, experience2))
 
         val java = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
         val kotlin = Skill(name = "kotlin", type = SkillType.LANGUAGE.name, isActive = true)
         val python = Skill(name = "python", type = SkillType.LANGUAGE.name, isActive = true)
-        skillRepository.saveAll(mutableListOf(java, kotlin))
+        skillRepository.saveAll(mutableListOf(java, kotlin, python))
 
         val project1 = Project(
             name = "유기묘 발견 정보 공유 서비스",
