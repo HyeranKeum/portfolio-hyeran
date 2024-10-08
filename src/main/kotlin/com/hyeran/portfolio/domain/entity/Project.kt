@@ -36,7 +36,7 @@ class Project(
     @OneToMany(
         targetEntity = ProjectDetail::class, // 아래와 일대다의 관계임을 알려주는 것
         fetch = FetchType.LAZY,
-        cascade = [CascadeType.PERSIST]
+        cascade = [CascadeType.ALL]
     ) //
     @JoinColumn(name = "project_id") // 맵핑 기준
     var details: MutableList<ProjectDetail> = mutableListOf()
@@ -44,7 +44,7 @@ class Project(
     @OneToMany(
         mappedBy = "project",
         fetch = FetchType.LAZY,
-        cascade = [CascadeType.PERSIST]
+        cascade = [CascadeType.ALL]
     ) // 양방향 연관관계에서 연관관계 주인 지정
     var skills: MutableList<ProjectSkill> = mutableListOf()
 
