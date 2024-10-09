@@ -31,4 +31,6 @@ class ResumeDTO(
                 ?.replace("-", ".")
         )
     }
+
+    var skills: List<SkillDTO> = skills.map { SkillDTO((it)) }
 }
