@@ -1,3 +1,11 @@
 package com.hyeran.portfolio.presentation.dto
 
-class IntroductionDTO
+import com.hyeran.portfolio.domain.entity.Introduction
+
+class IntroductionDTO(val content: String) {
+
+    constructor(introduction: Introduction) :
+            this(
+                content = introduction.content
+            )
+}
