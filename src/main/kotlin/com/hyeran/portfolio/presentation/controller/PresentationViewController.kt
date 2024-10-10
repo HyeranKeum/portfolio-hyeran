@@ -1,6 +1,5 @@
 package com.hyeran.portfolio.presentation.controller
 
-import ch.qos.logback.core.model.Model
 import com.hyeran.portfolio.domain.constant.SkillType
 import com.hyeran.portfolio.presentation.service.PresentationService
 import org.springframework.stereotype.Controller
@@ -17,7 +16,7 @@ class PresentationViewController(
     }
 
     @GetMapping("/")
-    fun index(model: org.springframework.ui.Model): String{
+    fun index(model: org.springframework.ui.Model): String {
         val introductions = presentationService.getIntroductions()
         model.addAttribute("introductions", introductions)
 
@@ -40,7 +39,7 @@ class PresentationViewController(
     @GetMapping("/projects")
     fun projects(model: org.springframework.ui.Model): String {
 
-        val projects = presentationService.getProjects()
+        val projects = presentationService.getProjects() //proiject DTO가 요소인 리스트의 형태
         model.addAttribute("projects", projects)
 
         return "presentation/projects"
