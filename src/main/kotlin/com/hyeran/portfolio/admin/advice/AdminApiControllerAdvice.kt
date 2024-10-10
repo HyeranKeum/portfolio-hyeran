@@ -1,0 +1,4 @@
+package com.hyeran.portfolio.admin.advice
+
+@RestControllerAdviceadvice
+class AdminApiControllerAdvice
