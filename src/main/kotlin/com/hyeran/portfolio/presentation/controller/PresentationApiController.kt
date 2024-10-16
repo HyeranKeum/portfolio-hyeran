@@ -21,20 +21,22 @@ class PresentationApiController(
     }
 
     @GetMapping("/v1/introductions")
-    fun getIntroductions(): List<IntroductionDTO>{
+    fun getIntroductions(): List<IntroductionDTO> {
         return presentationService.getIntroductions()
     }
 
     @GetMapping("/v1/links")
-    fun getLink(): List<LinkDTO>{
+    fun getLinks(): List<LinkDTO> {
         return presentationService.getLinks()
     }
+
     @GetMapping("/v1/resume")
-    fun getResume(): ResumeDTO{
+    fun getResume(): ResumeDTO {
         return presentationService.getResume()
     }
+
     @GetMapping("/v1/projects")
-    fun getProjects(): List<ProjectDTO>{
+    fun getProjects(): List<ProjectDTO> {
         return presentationService.getProjects()
     }
 

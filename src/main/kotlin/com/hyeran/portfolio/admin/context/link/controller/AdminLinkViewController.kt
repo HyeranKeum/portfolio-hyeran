@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 
 
 @Controller
-@RequestMapping("/admin/skill")
+@RequestMapping("/admin/link")
 class AdminLinkViewController(
     private val adminLinkService: AdminLinkService
 ) {
