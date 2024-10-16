@@ -44,7 +44,7 @@ class AdminProjectService(
         // ->cascadetype.all이어서 project detail을 저장하지 않아도 위 코드 한 줄로 알아서 처리
     }
 
-    //수정
+    //수정 -> detail도
     @Transactional
     fun update(id: Long, form: ProjectForm) {
         val project = projectRepository.findById(id) // 수정 요청한 애 id 있나 찾아보기
