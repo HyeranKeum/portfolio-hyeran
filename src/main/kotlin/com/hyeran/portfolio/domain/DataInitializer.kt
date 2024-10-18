@@ -17,7 +17,8 @@ class DataInitializer(
     private val linkRepository: LinkRepository,
     private val skillRepository: SkillRepository,
     private val projectRepository: ProjectRepository,
-    private val experienceRepository: ExperienceRepository
+    private val experienceRepository: ExperienceRepository,
+    private val accountRepository: AccountRepository
 ) {
     @PostConstruct
     // 스프링 DI 실행 시 component scan 해서 빈 등록 -> postconstruct 찾기
@@ -98,7 +99,7 @@ class DataInitializer(
         val mysql = Skill(name = "Mysql", type = SkillType.DATABASE.name, isActive = true)
         val redis = Skill(name = "Redis", type = SkillType.DATABASE.name, isActive = true)
         val kafka = Skill(name = "Kafka", type = SkillType.TOOL.name, isActive = true)
-        skillRepository.saveAll(mutableListOf(java, kotlin, python,spring, django, mysql, redis, kafka ))
+        skillRepository.saveAll(mutableListOf(java, kotlin, python, spring, django, mysql, redis, kafka))
 
         val project1 = Project(
             name = "유기묘 발견 정보 공유 서비스",
@@ -146,6 +147,14 @@ class DataInitializer(
             )
         )
         projectRepository.saveAll(mutableListOf(project1, project2))
+
+
+        val account = Account(
+            loginId = "admin1",
+            pw = "\$2a\$10\$4.wGiRco61BVZW2ro5t5S.kKJXG.tYhYs/0Ej8bqABQgewLasq.dW"
+
+        )
+        accountRepository.save(account)
     }
 
 }
