@@ -12,6 +12,7 @@ class HttpInterface(httpServletRequest: HttpServletRequest) : BaseEntity() {
     @Column(name = "http_interface_id")
     var id: Long? = null
 
+    @Column(length = 1024)
     var cookies: String? = httpServletRequest.cookies
         ?.map{"${it.name}:${it.value}"}
         ?.toString()

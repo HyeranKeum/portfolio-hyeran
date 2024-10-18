@@ -3,7 +3,7 @@ package com.hyeran.portfolio.admin.data
 import kotlin.reflect.KClass
 import kotlin.reflect.full.memberProperties
 
-class TableDTO(
+data class TableDTO(
     val name: String,
     val columns: List<String>,
     val records: List<List<String>>
