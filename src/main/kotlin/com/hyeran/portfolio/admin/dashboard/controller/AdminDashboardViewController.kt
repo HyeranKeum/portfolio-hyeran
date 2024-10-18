@@ -15,8 +15,9 @@ class AdminDashboardViewController(
 ) {
     @GetMapping
     fun index(model: Model) : String{
+
         val table = adminDashboardService.getHttpInterfaceTable()
-        model.addAttribute("table, table")
+        model.addAttribute("table", table)
 
         val total = adminDashboardService.countVisitorsTotal()
         val weekly = adminDashboardService.countVisitorsWeekly()
