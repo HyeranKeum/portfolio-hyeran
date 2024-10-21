@@ -8,9 +8,9 @@ spring:
     properties:
       hibernate:
         format_sql: false
-        default_batch_fetch_size: 10
+        # default_batch_fetch_size: 10
   datasource:
     url: jdbc:mysql://mysql:3306/portfolio
     username: root
-    password: ENC(5Q0kblP/F+yDvz11YgjH+byOIIpu/AuA)
+    password: ENC(bbNTYegv24pXPre5Js1q2/bb1323hGLS)
     driver-class-name: com.mysql.cj.jdbc.Driver
