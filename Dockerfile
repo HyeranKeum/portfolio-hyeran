@@ -1,3 +1,4 @@
+## 이 프로젝트 이미지 정보
 FROM openjdk:17
 
 LABEL maintainer="sarah2316@g.skku.edu"
