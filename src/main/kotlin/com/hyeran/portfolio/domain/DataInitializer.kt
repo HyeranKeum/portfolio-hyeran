@@ -68,19 +68,19 @@ class DataInitializer(
         // experienceRepo-에서 cascade = type.all -> 영속성 컨텍스트
         experienceRepository.saveAll(mutableListOf(experience1, ))
 
-        val java = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
-        val kotlin = Skill(name = "Kotlin", type = SkillType.LANGUAGE.name, isActive = true)
+        //val java = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
+        //val kotlin = Skill(name = "Kotlin", type = SkillType.LANGUAGE.name, isActive = true)
         val python = Skill(name = "Python", type = SkillType.LANGUAGE.name, isActive = true)
         val csharp = Skill(name = "C#", type = SkillType.LANGUAGE.name, isActive = true)
         val spring = Skill(name = "Spring", type = SkillType.FRAMEWORK.name, isActive = true)
-        val django = Skill(name = "Django", type = SkillType.FRAMEWORK.name, isActive = true)
+        //val django = Skill(name = "Django", type = SkillType.FRAMEWORK.name, isActive = true)
         val mysql = Skill(name = "Mysql", type = SkillType.DATABASE.name, isActive = true)
-        val redis = Skill(name = "Redis", type = SkillType.DATABASE.name, isActive = true)
-        val kafka = Skill(name = "Kafka", type = SkillType.TOOL.name, isActive = true)
+        //val redis = Skill(name = "Redis", type = SkillType.DATABASE.name, isActive = true)
+        //val kafka = Skill(name = "Kafka", type = SkillType.TOOL.name, isActive = true)
         val matlab = Skill(name = "Matlab", type = SkillType.TOOL.name, isActive = true)
         val unity = Skill(name = "Unity", type = SkillType.TOOL.name, isActive = true)
         val mlAgents = Skill(name = "ML-agents", type = SkillType.FRAMEWORK.name, isActive = true)
-        skillRepository.saveAll(mutableListOf(java, kotlin, python, spring, django, mysql, redis, kafka, csharp, unity, mlAgents))
+        skillRepository.saveAll(mutableListOf( python, spring, mysql, csharp, unity, mlAgents, matlab))
 
 
         val project1 = Project(
@@ -144,7 +144,7 @@ class DataInitializer(
         )
         project3.skills.addAll(
             mutableListOf(
-                ProjectSkill(project = project2, skill = python),
+                ProjectSkill(project = project3, skill = python),
             )
         )
         projectRepository.saveAll(mutableListOf(project1, project2, project3))
