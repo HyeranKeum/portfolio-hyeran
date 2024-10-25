@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional
 class AdminProjectService(
     private val projectRepository: ProjectRepository
 ) {
+    @Transactional
     fun getProjectTable(): TableDTO {
         val classInfo = Project::class
         val entities = projectRepository.findAll()
@@ -21,6 +22,7 @@ class AdminProjectService(
         return TableDTO.from(classInfo, entities, "details, skills")
     }
 
+    @Transactional
     fun getProjectDetailTable(id: Long?): TableDTO {
         val classInfo = ProjectDetail::class
         val entities = if (id != null) projectRepository.findById(id)
