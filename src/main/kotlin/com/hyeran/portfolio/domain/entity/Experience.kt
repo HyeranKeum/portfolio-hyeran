@@ -61,6 +61,7 @@ class Experience(
         this.title = title
         this.description = description
         this.startYear = startYear
+        this.startMonth = startMonth
         this.endYear = endYear
         this.endMonth = endMonth
         this.isActive = isActive
