@@ -20,7 +20,7 @@ class AdminDashboardService(
         val classInfo = HttpInterface::class
         val entities = httpInterfaceRepository.findAll(pageRequest).content
 
-        return TableDTO.from(classInfo, entities)
+        return TableDTO.from(classInfo, entities, "cookies")
     }
 
     fun countVisitorsTotal(): Long{

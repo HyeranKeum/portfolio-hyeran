@@ -19,7 +19,7 @@ class AdminProjectService(
         val classInfo = Project::class
         val entities = projectRepository.findAll()
 
-        return TableDTO.from(classInfo, entities, "details, skills")
+        return TableDTO.from(classInfo, entities, "details", "skills")
     }
 
     @Transactional
